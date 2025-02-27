@@ -1,1 +1,27 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>CoCoLuxe</title>
+</head>
+<body>
+    <div class="bg-image">
+        <div class="map-wrapper">
+            <p class="location-text">📍{{ shop_loc }}</p>
+            <div class="map-container">
+                <iframe
+                    src="{{ shop_location_link }}"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
