@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Shop Location</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin: Update Shop Location</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="/update-location">
+            <label for="location_link">Location Link:</label><br>
+            <input type="text" id="location_link" name="location_link" 
+                   placeholder="Enter location link" required
+                   value="{{ shop_location_link }}"><br>
+            
+            <input type="password" id="password" name="password" 
+                   placeholder="Enter password" required>
+            <br>
+            
+            <input type="text" id="key" name="key" 
+                   placeholder="Enter shop location keyword" required>
+            <br><br>
+            
+            <button type="submit" class="button">Update Location</button>
+        </form>
+        
+        <br><br>
+        <a href="/" class="button">Go to Shop Location</a>
+    </div>
+</body>
+</html>
