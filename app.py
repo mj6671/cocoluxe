@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from passs import word
 import re
 
 app = Flask(__name__, static_url_path='/static')
