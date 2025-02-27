@@ -8,7 +8,7 @@ app.secret_key = 'your_secret_key'
 # Default shop location (Cocoluxe, for example)
 shop_location_link = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2759058628412!2d80.03831307507399!3d12.825439387476608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7cb7c90461d%3A0xb41d334731b4d361!2sCocoluxe!5e0!3m2!1sen!2sin!4v1740648544249!5m2!1sen!2sin"
 shop_loc = "near MBA block"
-password = word
+
 
 def convert_to_embed_link(location_link: str) -> str:
     # Check for short links (e.g., goo.gl or maps.app.goo.gl)
@@ -42,7 +42,7 @@ def update_location():
         input_password = request.form.get('password')
         shop_loc = request.form.get('key')
 
-        if location_link and input_password == password:
+        if location_link and input_password == "luxe:
             shop_location_link = convert_to_embed_link(location_link)
             flash('Shop location updated successfully!', 'success')
         else:
