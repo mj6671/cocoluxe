@@ -1,0 +1,96 @@
+/* Full-Page Background with Image */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&family=Poppins:wght@500&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background Image Container */
+.bg-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 17px;
+    text-align: left;
+    background-image: url('bg.png'); /* Add your image path here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+}
+
+/* Wrapper for Text and Map */
+.map-wrapper {
+    position: absolute;
+    bottom: 185px; /* Fixed distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* Light background for contrast */
+    
+}
+
+
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    max-width: 800px; /* Adjusted for average screen sizes */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    z-index: 5;
+}
+
+.location-text {
+    font-size: 5px;
+    font-weight: bold;
+    color: chocolate;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    z-index: 10;
+    white-space: nowrap; /* Keeps the text in a single line */
+    text-align: left;
+    
+    /* Box styling */
+    background-color: rgba(255, 255, 255, 0.7); /* Light white background with transparency */
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+/* Responsive Iframe */
+.map-container iframe {
+    width: 150%;
+    height: 150%;
+    border: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .location-text {
+        font-size: 6vw;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    .location-text {
+        font-size: 8vw;
+    }
+}
